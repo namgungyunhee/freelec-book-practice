@@ -1,0 +1,52 @@
+// 맨위에 작성, 의존성 관리를 위한 설정
+// ext - 전역변수 springBootVersion을 설정
+// repositories - 의존성 다운받을 곳은 mavenCentral이나 jcenter에서 받겠다는 설정
+// dependencies - 어떤 것을 받아올 것인가?
+buildscript {
+    ext {
+        springBootVersion = '2.1.7.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+group 'com.yunhee.book'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+
+// java와 spring boot를 사용할 때 꼬옥 필요한 plug-in들, 필수 추가!
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+// 스프링 부트의 의존성들을 관리해주는 플러그인 (require)
+apply plugin: 'io.spring.dependency-management'
+
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
