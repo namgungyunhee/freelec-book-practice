@@ -20,18 +20,8 @@ plugins {
 }
 
 group 'com.yunhee.book'
-version '1.0-SNAPSHOT'
-
+version '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-}
-
 
 // java와 spring boot를 사용할 때 꼬옥 필요한 plug-in들, 필수 추가!
 apply plugin: 'java'
@@ -39,7 +29,6 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 // 스프링 부트의 의존성들을 관리해주는 플러그인 (require)
 apply plugin: 'io.spring.dependency-management'
-
 
 repositories {
     mavenCentral()
@@ -49,5 +38,9 @@ repositories {
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.projectlombok:lombok')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('com.h2database:h2')
+    compile('org.springframework.boot:spring-boot-starter-mustache')
     testCompile('org.springframework.boot:spring-boot-starter-test')
+
 }
