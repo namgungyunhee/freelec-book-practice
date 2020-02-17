@@ -1,5 +1,8 @@
 package com.yunhee.book.web;
 
+import com.yunhee.book.config.auth.LoginUser;
+import com.yunhee.book.config.auth.dto.SessionUser;
+import com.yunhee.book.domain.user.User;
 import com.yunhee.book.service.posts.PostsService;
 import com.yunhee.book.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
@@ -8,16 +11,23 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import javax.mail.Session;
+import javax.servlet.http.HttpSession;
+
 @RequiredArgsConstructor
 @Controller
 public class IndexController {
 
     private final PostsService postsService;
-
+    private final HttpSession httpSession;
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, @LoginUser SessionUser user) {
         // 알아서 파일경로 + return text + .mustache 로 view Resolver가 처리해줌
         model.addAttribute("posts", postsService.findAllDesc());
+
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
+        }
         return "index";
     }
 
