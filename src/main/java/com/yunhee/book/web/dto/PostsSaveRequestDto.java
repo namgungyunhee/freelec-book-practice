@@ -1,6 +1,7 @@
 package com.yunhee.book.web.dto;
 
 import com.yunhee.book.domain.posts.Posts;
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

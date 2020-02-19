@@ -1,9 +1,10 @@
 package com.yunhee.book.config.auth.dto;
 
-import com.yunhee.book.domain.user.User;
-import lombok.Getter;
-
 import java.io.Serializable;
+
+import com.yunhee.book.domain.user.User;
+
+import lombok.Getter;
 
 @Getter
 public class SessionUser implements Serializable {

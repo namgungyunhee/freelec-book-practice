@@ -1,6 +1,7 @@
 var index = {
 
     init: function () {
+        console.log("init!")
         var _this = this;
         $('#btn-save').on('click', function () {
             _this.save()

@@ -1,10 +1,12 @@
 package com.yunhee.book.config.auth;
 
-import com.yunhee.book.domain.user.Role;
-import lombok.RequiredArgsConstructor;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+
+import com.yunhee.book.domain.user.Role;
+
+import lombok.RequiredArgsConstructor;
 
 
 @RequiredArgsConstructor

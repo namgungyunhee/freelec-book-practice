@@ -1,8 +1,8 @@
 package com.yunhee.book.web.dto;
 
-import com.yunhee.book.domain.posts.Posts;
-
 import java.time.LocalDateTime;
+
+import com.yunhee.book.domain.posts.Posts;
 
 // 구조체와 같은 존재
 public class PostsListResponseDto {

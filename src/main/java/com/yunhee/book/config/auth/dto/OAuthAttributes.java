@@ -1,11 +1,12 @@
 package com.yunhee.book.config.auth.dto;
 
+import java.util.Map;
+
 import com.yunhee.book.domain.user.Role;
 import com.yunhee.book.domain.user.User;
+
 import lombok.Builder;
 import lombok.Getter;
-
-import java.util.Map;
 
 @Getter
 public class OAuthAttributes {
